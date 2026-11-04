@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover elegant fashion and lifestyle products at Velora.">
+    <title>Velora | Modern Lifestyle Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="announcement">
+        Free shipping on orders over ₹1,999
+    </div>
+
+    <header class="header">
+        <a href="#" class="logo">velora<span>.</span></a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            ☰
+        </button>
+
+        <nav class="nav" id="nav">
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-btn" id="searchFocus" aria-label="Search">⌕</button>
+            <button class="icon-btn" id="wishlistButton" aria-label="Wishlist">
+                ♡ <span id="wishlistCount">0</span>
+            </button>
+            <button class="icon-btn cart-button" id="cartButton" aria-label="Shopping cart">
+                Bag (<span id="cartCount">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">THE ART OF EVERYDAY LIVING</p>
+                <h1>Find your<br><em>everyday</em> elegance.</h1>
+                <p class="hero-description">
+                    Thoughtfully selected pieces to make your everyday moments feel special.
+                </p>
+                <a href="#shop" class="primary-btn">Explore Collection <span>→</span></a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=85" alt="Elegant fashion collection">
+            </div>
+        </section>
+
+        <section class="benefits">
+            <div><span>✧</span> Carefully Curated</div>
+            <div><span>♡</span> Made for Everyday</div>
+            <div><span>♧</span> Easy Shopping</div>
+            <div><span>↗</span> Free Shipping ₹1,999+</div>
+        </section>
+
+        <section class="shop-section section-padding" id="shop">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">OUR COLLECTION</p>
+                    <h2>Shop the essentials</h2>
+                </div>
+                <p>Discover pieces you'll love, every day.</p>
+            </div>
+
+            <div class="shop-controls">
+                <div class="categories" id="categories">
+                    <button class="category-btn active" data-category="All">All</button>
+                    <button class="category-btn" data-category="Clothing">Clothing</button>
+                    <button class="category-btn" data-category="Accessories">Accessories</button>
+                    <button class="category-btn" data-category="Home">Home</button>
+                </div>
+
+                <input type="search" id="searchInput" placeholder="Search products..." aria-label="Search products">
+            </div>
+
+            <div class="product-grid" id="productGrid"></div>
+            <p class="empty-message" id="emptyMessage" hidden>No products found. Try another search.</p>
+        </section>
+
+        <section class="editorial section-padding" id="about">
+            <div class="editorial-image">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=85" alt="Minimal boutique interior">
+            </div>
+            <div class="editorial-content">
+                <p class="eyebrow">A LITTLE ABOUT US</p>
+                <h2>Less, but<br><em>better.</em></h2>
+                <p>
+                    At Velora, we believe great style is found in the little things.
+                    Our collection brings together timeless design, thoughtful details
+                    and everyday comfort.
+                </p>
+                <a href="#shop" class="text-link">Discover our collection →</a>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <p class="eyebrow">STAY IN THE LOOP</p>
+            <h2>A little note from Velora.</h2>
+            <p>Get updates about new arrivals and special offers.</p>
+            <form id="newsletterForm" class="newsletter-form">
+                <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe →</button>
+            </form>
+            <p class="form-message" id="newsletterMessage"></p>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div>
+            <a href="#" class="logo">velora<span>.</span></a>
+            <p>Everyday elegance, thoughtfully chosen.</p>
+        </div>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+            <a href="mailto:hello@velora.example">Email Us</a>
+        </div>
+        <p class="copyright">© <span id="year"></span> Velora. All rights reserved.</p>
+    </footer>
+
+    <!-- Shopping cart drawer -->
+    <div class="overlay" id="overlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+        <div class="drawer-header">
+            <h2>Your Bag</h2>
+            <button class="close-btn" id="closeCart" aria-label="Close cart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+            <p>Shipping and taxes calculated at checkout.</p>
+            <button class="primary-btn checkout-btn" id="checkoutButton">Proceed to Checkout →</button>
+        </div>
+    </aside>
+
+    <!-- Wishlist drawer -->
+    <aside class="cart-drawer wishlist-drawer" id="wishlistDrawer" aria-label="Wishlist">
+        <div class="drawer-header">
+            <h2>Your Wishlist</h2>
+            <button class="close-btn" id="closeWishlist" aria-label="Close wishlist">×</button>
+        </div>
+        <div class="cart-items" id="wishlistItems"></div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
