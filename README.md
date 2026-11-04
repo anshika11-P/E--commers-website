@@ -39,5 +39,4 @@ Velora/
 3. Open index.html in your browser.
 
 ## Author
-
 Anshika
